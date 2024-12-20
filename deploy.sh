@@ -1,5 +1,7 @@
 #!/bin/bash
 
+minikube start
+
 # Vérifier que kubectl est installé
 command -v kubectl >/dev/null 2>&1 || { echo >&2 "kubectl n'est pas installé. Abandon."; exit 1; }
 
