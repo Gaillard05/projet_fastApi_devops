@@ -1,6 +1,6 @@
 Avant de démarrer les commandes docker ou toutes autres commandes verifiez que vous êtes dans le répertoire app :
 
-Sinon généré par docker compose
+Si non généré par docker compose
 généré image docker :
 
 - docker build -t fastapi-app:latest .
