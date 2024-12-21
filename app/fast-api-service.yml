@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fast-api-service
+spec:
+  selector:
+    app: fast-api # Ce label doit correspondre aux pods du déploiement FastAPI
+  ports:
+    - protocol: TCP
+      port: 8000 # Port du service FastAPI
+      targetPort: 8000 # Port dans le conteneur FastAPI
+      nodePort: 30000 # Port exposé à l'extérieur
+  type: NodePort # Cela permet d'exposer le service à l'extérieur de Kubernetes

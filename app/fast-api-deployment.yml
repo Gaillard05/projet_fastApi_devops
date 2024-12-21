@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fast-api-deployment
+spec:
+  replicas: 2 # Configuration des répliques
+  selector:
+    matchLabels:
+      app: fast-api
+  template:
+    metadata:
+      labels:
+        app: fast-api
+    spec:
+      containers:
+        - name: fast-api
+          image: bravinwasike/fast-api
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DATABASE_HOST
+              value: "mysql-service" # Assurez-vous que la base de données MySQL est accessible via ce service
+            - name: DATABASE_PORT
+              value: "3306"
+            - name: DATABASE_NAME
+              value: "your-database"
+            - name: DATABASE_USER
+              value: "your-user"
+            - name: DATABASE_PASSWORD
+              value: "your-password"
