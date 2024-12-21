@@ -1,0 +1,43 @@
+Avant de démarrer les commandes docker ou toutes autres commandes verifiez que vous êtes dans le répertoire app :
+
+Si non généré par docker compose
+généré image docker :
+
+- docker build -t fastapi-app:latest .
+
+créer les conteneurs avec docker :
+
+- docker-compose up --build -d
+
+autre commandes utiles pour docker :
+
+- docker-compose stop
+- docker-compose up
+- docker-compose down
+
+installation de minikube pour linux (si installation non réalisée)
+- curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+- sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+
+
+lancer le script création cluster minikube
+- /app
+- ./deploy.sh
+
+
+verifiez que les package suivant sont installés
+
+- fastapi
+
+- unicorn
+
+- mysql-connector-python 
+
+
+sinon les installer avec les commandes : 
+
+- pip install fastapi
+
+- pip install mysql-connector-python
+
+- pip install uvicorn
