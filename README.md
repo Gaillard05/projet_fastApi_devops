@@ -42,7 +42,7 @@ Pour supprimer le volume de mysql si besoin :
 - kubectl patch pvc mysql-pvc -p '{"metadata":{"finalizers":null}}'
 - kubectl delete pvc mysql-pvc --force --grace-period=0 --ignore-not-found
 
-Verifiez que les package suivant sont installés
+Vérifiez que les package suivant sont installés
 
 - fastapi
 
